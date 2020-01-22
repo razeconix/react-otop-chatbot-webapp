@@ -3,16 +3,22 @@
   "version": "1.0.0",
   "description": "reactbot for webpage",
   "main": "index.js",
-  "engines":{
+  "engines": {
     "node": "12.14.1",
     "npm": "6.13.4"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "backend": "nodemon index.js"
   },
   "author": "kiratiphan p",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "dialogflow": "^1.1.1",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
