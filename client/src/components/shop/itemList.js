@@ -1,7 +1,7 @@
 import React from 'react';
 const itemList =() => (
     <div>
-        <h1>List of items</h1>
+        <h1>รายการสินค้า</h1>
     </div>
 )
 
