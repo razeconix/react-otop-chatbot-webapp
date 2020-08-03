@@ -10,16 +10,20 @@
   "scripts": {
     "start": "node index.js",
     "backend": "nodemon index.js",
-    "frontend" : "npm run start --prefix client",
+    "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\"  \"npm run start --prefix client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "kiratiphan p",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dialogflow": "^1.1.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.27"
   },
   "devDependencies": {
     "concurrently": "^5.0.2",
