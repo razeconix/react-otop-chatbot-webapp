@@ -9,6 +9,7 @@ const Header =() =>(
                     <li><Link to={'/shop'}>สินค้า</Link></li>
                     <li><Link to={'/about'}>เกี่ยวกับเรา</Link></li>
                     <li><Link to={'/login'}>เข้าสู่ระบบ(admin)</Link></li>
+                    <li><Link to={'/register'}>register</Link></li>
             
                 </ul>
             </div>

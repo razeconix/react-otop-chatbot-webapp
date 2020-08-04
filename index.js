@@ -1,13 +1,20 @@
 const express = require('express');
+var cors = require('cors')
 const bodyParser = require('body-parser');
 const app = express();
-var cors = require('cors')
+
 
 const config = require('./config/keys');
 const mongoose = require('mongoose');
 mongoose.connect(config.mongoURI, { useNewUrlParser: true });
 
 
+app.use(cors())
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+)
 
 app.use(bodyParser.json());
 require('./routes/dialogFlowRoutes')(app);
@@ -24,6 +31,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
+var Users = require('./routes/Users')
+app.use('/users', Users)
 
 
 
