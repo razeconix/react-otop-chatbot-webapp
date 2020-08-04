@@ -16,9 +16,6 @@ app.use(
   })
 )
 
-app.use(bodyParser.json());
-require('./routes/dialogFlowRoutes')(app);
-
 if (process.env.NODE_ENV === 'production') {
     // js and css files
     app.use(express.static('client/build'));
@@ -30,9 +27,14 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
+app.use(bodyParser.json());
+require('./routes/dialogFlowRoutes')(app);
 
 var Users = require('./routes/Users')
 app.use('/users', Users)
+
+var Products = require('./routes/Products')
+app.use('/products', Products)
 
 
 
