@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-export default class CreateProduct extends Component {
+export default class EditProduct extends Component {
   constructor(props) {
     super(props);
 
@@ -22,11 +22,26 @@ export default class CreateProduct extends Component {
     }
   }
 
-  
+  componentDidMount() {
+    axios.get('http://localhost:5000/products/'+this.props.match.params.id)
+      .then(response => {
+        this.setState({
+          product_name: response.data.product_name,
+          description: response.data.description,
+          price: response.data.price,
+          category: response.data.category,
+          img:  response.data.img
+        })   
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      
+  }
 
   onChangeProductName(e) {
     this.setState({
-      product_name: e.target.value
+        product_name: e.target.value
     })
   }
 
@@ -35,8 +50,7 @@ export default class CreateProduct extends Component {
       description: e.target.value
     })
   }
-
-  onChangePrice(e) {
+ onChangePrice(e) {
     this.setState({
       price: e.target.value
     })
@@ -58,25 +72,24 @@ export default class CreateProduct extends Component {
     e.preventDefault();
 
     const product = {
-      product_name: this.state.product_name,
-      description: this.state.description,
-      price: this.state.price,
-      category: this.state.category,
-      img:this.state.img
-    }
+        product_name: this.state.product_name,
+        description: this.state.description,
+        price: this.state.price,
+        category: this.state.category,
+        img:this.state.img
+      }
+  
+      console.log(product);
 
-    console.log(product);
-
-    axios.post('/products/add', product)
+      axios.post('http://localhost:5000/products/update/' + this.props.match.params.id, product)
       .then(res => console.log(res.data));
 
     window.location = '/profile';
   }
-
   render() {
     return (
     <div>
-      <h3>เพิ่มสินค้า</h3>
+      <h3>แก้ไขสินค้า</h3>
       <form onSubmit={this.onSubmit}>
       <div className="form-group"> 
           <label>ชื่อสินค้า: </label>
@@ -125,11 +138,12 @@ export default class CreateProduct extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="เพิ่มสินค้า" className="btn btn-primary" />
+          <input type="submit" value="Edit product" className="btn btn-primary" />
         </div>
       </form>
     </div>
     )
   }
 }
+
 
