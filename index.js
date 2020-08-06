@@ -2,6 +2,15 @@ const express = require('express');
 var cors = require('cors')
 const bodyParser = require('body-parser');
 const app = express();
+const proxy = require('http-proxy-middleware');
+app.use(proxy('/products',{
+  target: 'http://localhost:5000'
+  
+})),
+app.use(proxy('/products/update',{
+  target: 'http://localhost:5000'
+  
+}))
 
 
 const config = require('./config/keys');
@@ -23,7 +32,7 @@ app.use(function(req, res, next) {
   
       next();
   });
-  
+
 app.use(cors())
 app.use(
   bodyParser.urlencoded({
