@@ -25,7 +25,7 @@ class ProductList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/products/')
+    axios.get('/products/')
       .then(response => {
         this.setState({ products: response.data })
       })
@@ -35,7 +35,7 @@ class ProductList extends Component {
   }
 
   deleteProduct(id) {
-    axios.delete('http://localhost:5000/products/'+id)
+    axios.delete('/products/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
