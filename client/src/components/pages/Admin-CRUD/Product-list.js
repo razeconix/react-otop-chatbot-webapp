@@ -25,7 +25,7 @@ class ProductList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://enigmatic-chamber-67174.herokuapp.com//products/')
+    axios.get('http://localhost:5000/products/')
       .then(response => {
         this.setState({ products: response.data })
       })
