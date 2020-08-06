@@ -4,14 +4,6 @@ module.exports = function(app) {
     target: 'http://localhost:5000'
     
 
-  })),
-  app.use(proxy('/products',{
-    target: 'http://localhost:5000'
-    
-  })),
-  app.use(proxy('/products/update',{
-    target: 'http://localhost:5000'
-    
   }))
 
 

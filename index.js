@@ -2,7 +2,7 @@ const express = require('express');
 var cors = require('cors')
 const bodyParser = require('body-parser');
 const app = express();
-const proxy = require('http-proxy-middleware');
+
 
 
 const config = require('./config/keys');
