@@ -25,7 +25,7 @@ class ProductList extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/products/')
+    axios.get('http://localhost:5000/products/')
       .then(response => {
         this.setState({ products: response.data })
       })
