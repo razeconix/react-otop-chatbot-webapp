@@ -24,8 +24,8 @@ class ProductList extends Component {
     this.state = {products: []};
   }
 
-  async componentDidMount() {
-     await axios.get('/products/')
+   componentDidMount() {
+      axios.get('/products/')
       .then(response => {
        this.setState({ products: response.data })
      })
