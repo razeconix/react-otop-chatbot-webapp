@@ -24,18 +24,18 @@ class ProductList extends Component {
     this.state = {products: []};
   }
 
-   componentDidMount() {
-     axios.get('/products/')
+  componentDidMount() {
+    axios.get('http://localhost:5000/products/')
       .then(response => {
-       this.setState({ products: response.data })
-     })
-    .catch((error) => {
+        this.setState({ products: response.data })
+      })
+      .catch((error) => {
         console.log(error);
       })
   }
 
   deleteProduct(id) {
-    axios.delete('/products/'+id)
+    axios.delete('http://localhost:5000/products/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
