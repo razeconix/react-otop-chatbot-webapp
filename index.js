@@ -33,12 +33,15 @@ app.use(
 )
 
 if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('client/build'));
-  app.use('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-  }
+    // js and css files
+    app.use(express.static('client/build'));
+
+    // index.html for all page routes
+    const path = require('path');
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+}
 
 app.use(bodyParser.json());
 require('./routes/dialogFlowRoutes')(app);
