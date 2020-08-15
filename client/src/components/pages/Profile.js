@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
 import ProductList from './Admin-CRUD/Product-list';
-import axios from 'axios';
+
 
 class Profile extends Component {
   constructor() {
@@ -15,13 +15,6 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    axios.get('/products/')
-      .then(response => {
-        this.setState({ products: response.data })
-      })
-      .catch((error) => {
-        console.log(error);
-      })
     const token = localStorage.usertoken
     const decoded = jwt_decode(token)
     this.setState({
