@@ -67,7 +67,7 @@ export default class CreateProduct extends Component {
 
     console.log(product);
 
-    axios.post('/api/products/add', product)
+    axios.post('/products/add', product)
       .then(res => console.log(res.data));
 
     window.location = '/profile';
