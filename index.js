@@ -47,7 +47,7 @@ var Users = require('./routes/Users')
 app.use('/users', Users)
 
 var Products = require('./routes/Products')
-app.use('/api/products', Products)
+app.use('/products', Products)
 
 
 

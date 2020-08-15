@@ -24,10 +24,10 @@ class ProductList extends Component {
     this.state = {products: []};
   }
 
-  componentDidMount() {
-    axios.get('/api/products/')
+  async componentDidMount() {
+     await axios.get('/products/')
       .then(response => {
-        this.setState({ products: response.data })
+       this.setState({ products: response.data })
      })
     .catch((error) => {
         console.log(error);
@@ -35,7 +35,7 @@ class ProductList extends Component {
   }
 
   deleteProduct(id) {
-    axios.delete('/api/products/'+id)
+    axios.delete('/products/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
