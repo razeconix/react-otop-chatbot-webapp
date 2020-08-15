@@ -47,10 +47,10 @@ app.use(bodyParser.json());
 require('./routes/dialogFlowRoutes')(app);
 
 var Users = require('./routes/Users')
-app.use('/api/users', Users)
+app.use('/users', Users)
 
 var Products = require('./routes/Products')
-app.use('/api/products', Products)
+app.use('/products', Products)
 
 
 
