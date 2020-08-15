@@ -81,7 +81,7 @@ export default class EditProduct extends Component {
   
       console.log(product);
 
-      axios.post('http://localhost:5000/products/update/' + this.props.match.params.id, product)
+      axios.post('/products/update/' + this.props.match.params.id, product)
       .then(res => console.log(res.data));
 
     window.location = '/profile';
