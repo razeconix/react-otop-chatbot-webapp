@@ -3,8 +3,7 @@ var cors = require('cors')
 const bodyParser = require('body-parser');
 const app = express();
 
-
-
+//Connect Database mongoDB
 const config = require('./config/keys');
 const mongoose = require('mongoose');
 mongoose.connect(config.mongoURI, { useNewUrlParser: true });
@@ -17,6 +16,7 @@ app.use(
   })
 )
 
+//Export Product to Heroku setup
 if (process.env.NODE_ENV === 'production') {
     // js and css files
     app.use(express.static('client/build'));
