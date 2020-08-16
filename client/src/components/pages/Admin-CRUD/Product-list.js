@@ -25,7 +25,7 @@ class ProductList extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://enigmatic-chamber-67174.herokuapp.com/products/')
+    axios.get('https://enigmatic-chamber-67174.herokuapp.com/products/') //http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com
       .then(response => {
         this.setState({ products: response.data })
       })
@@ -35,7 +35,7 @@ class ProductList extends Component {
   }
 
   deleteProduct(id) {
-    axios.delete('https://enigmatic-chamber-67174.herokuapp.com/products/'+id)
+    axios.delete('https://enigmatic-chamber-67174.herokuapp.com/products/'+id) //http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com 
       .then(response => { console.log(response.data)});
 
     this.setState({

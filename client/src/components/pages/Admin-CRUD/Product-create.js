@@ -67,7 +67,7 @@ export default class CreateProduct extends Component {
 
     console.log(product);
 
-    axios.post('/products/add', product)
+    axios.post('https://enigmatic-chamber-67174.herokuapp.com/products/add', product) //http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com
       .then(res => console.log(res.data));
 
     window.location = '/profile';

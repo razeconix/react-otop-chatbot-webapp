@@ -23,7 +23,7 @@ export default class EditProduct extends Component {
   }
 
   componentDidMount() {
-    axios.get('/products/'+this.props.match.params.id)
+    axios.get('https://enigmatic-chamber-67174.herokuapp.com/products/'+this.props.match.params.id) //http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com
       .then(response => {
         this.setState({
           product_name: response.data.product_name,
@@ -81,7 +81,7 @@ export default class EditProduct extends Component {
   
       console.log(product);
 
-      axios.post('/products/update/' + this.props.match.params.id, product)
+      axios.post('https://enigmatic-chamber-67174.herokuapp.com/products/update/' + this.props.match.params.id, product)//http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com
       .then(res => console.log(res.data));
 
     window.location = '/profile';
