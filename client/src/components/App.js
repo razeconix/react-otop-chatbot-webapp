@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-
+import { HashRouter } from 'react-router-dom'
 import Header from './Header';
 import Landing from './pages/Landing';
 import About from './pages/About';
@@ -18,7 +18,7 @@ import EditProduct from './pages/Admin-CRUD/Product-edit';
 
 const App =() => (
             <div>
-                <BrowserRouter>
+                <HashRouter>
                     <div>
                         <Header/>
                         <Route exact path="/" component={Landing} />
@@ -36,7 +36,7 @@ const App =() => (
                         
                         
                     </div>
-                </BrowserRouter>
+                </HashRouter>
             </div>
 )   
 
