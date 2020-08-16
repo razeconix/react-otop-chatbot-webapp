@@ -10,7 +10,7 @@ const Product = props => (
     <td>{props.product.category}</td>
     <td>{props.product.img}</td>
     <td>
-      <Link to={"/profile/edit/"+props.product._id}>edit</Link> | <a href="#" onClick={() => { props.deleteProduct(props.product._id) }}>delete</a>
+      <Link to={"https://enigmatic-chamber-67174.herokuapp.com/profile/edit/"+props.product._id}>edit</Link> | <a href="#" onClick={() => { props.deleteProduct(props.product._id) }}>delete</a>
     </td>
   </tr>
 )
@@ -52,8 +52,8 @@ class ProductList extends Component {
   render() {
     return (
       <div>
-        <h3>Logged Product</h3>
-        <a href="/profile/create" class="waves-effect waves-light btn">เพิ่มสินค้า</a>
+        <h3>รายการสินค้า</h3>
+        <a href="https://enigmatic-chamber-67174.herokuapp.com/profile/create" class="waves-effect waves-light btn">เพิ่มสินค้า</a> 
         <table className="table">
           <thead className="thead-light">
             <tr>
