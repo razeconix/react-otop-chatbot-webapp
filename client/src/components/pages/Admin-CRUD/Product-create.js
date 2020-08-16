@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 export default class CreateProduct extends Component {
   constructor(props) {
@@ -70,7 +70,7 @@ export default class CreateProduct extends Component {
     axios.post('https://enigmatic-chamber-67174.herokuapp.com/products/add', product) //http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com
       .then(res => console.log(res.data));
 
-    window.location = '/profile'; // เวลา Deploy <Link to={"/profile"}></Link>
+    window.location = <Link to={"/profile"}></Link>; // เวลา Deploy <Link to={"/profile"}></Link>  || '/profile'
     
   }
 
