@@ -69,7 +69,7 @@ export default class EditProduct extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.history.push('/profile');
+    
     
     const product = {
         product_name: this.state.product_name,
@@ -84,9 +84,7 @@ export default class EditProduct extends Component {
       axios.post('https://enigmatic-chamber-67174.herokuapp.com/products/update/' + this.props.match.params.id, product)//http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com
       .then(res => console.log(res.data));
 
-    
-     
-        
+      this.props.history.push('/profile');
     
   }
   render() {
