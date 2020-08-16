@@ -11,7 +11,7 @@ import Profile from './pages/Profile';
 import Chatbot from './Chatbot/Chatbot';
 import CreateProduct from './pages/Admin-CRUD/Product-create';
 import EditProduct from './pages/Admin-CRUD/Product-edit';
-import ProductList from './pages/Admin-CRUD/Product-list';
+
 
 
 
@@ -27,7 +27,6 @@ const App =() => (
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/register" component={Register}/>
                         <Route exact path="/profile" component={Profile}/>
-                        <Route exact path="/admin" component={ProductList}/>
                         <Route exact path="/profile/create" component={CreateProduct}/>
                         <Route exact path="/profile/edit/:id" component={EditProduct}/>
                         
