@@ -70,7 +70,7 @@ export default class EditProduct extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-
+    window.location = "https://enigmatic-chamber-67174.herokuapp.com/profile";
     const product = {
         product_name: this.state.product_name,
         description: this.state.description,
@@ -84,7 +84,9 @@ export default class EditProduct extends Component {
       axios.post('https://enigmatic-chamber-67174.herokuapp.com/products/update/' + this.props.match.params.id, product)//http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com
       .then(res => console.log(res.data));
 
-    window.location = "https://enigmatic-chamber-67174.herokuapp.com/profile";
+      //window.location = "https://enigmatic-chamber-67174.herokuapp.com/profile";
+      this.props.history.push('/profile')
+    
   }
   render() {
     return (
