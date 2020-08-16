@@ -8,7 +8,7 @@
     "npm": "6.13.4"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "webpack-dev-server --inline --content-base . --history-api-fallback",
     "backend": "nodemon index.js",
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\"  \"npm run start --prefix client\"",
