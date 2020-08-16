@@ -48,13 +48,13 @@ class ProductList extends Component {
       return <Product product={currentproduct} deleteProduct={this.deleteProduct} key={currentproduct._id}/>;
     })
   }
-
+  
+//<a href="/profile/create" class="waves-effect waves-light btn">เพิ่มสินค้า</a> 
   render() {
     return (
       <div>
         <h3>รายการสินค้า</h3>
         <Link to={"/profile/create"} class="waves-effect waves-light btn">เพิ่มสินค้า</Link>
-        <a href="/profile/create" class="waves-effect waves-light btn">เพิ่มสินค้า</a> 
         <table className="table">
           <thead className="thead-light">
             <tr>
