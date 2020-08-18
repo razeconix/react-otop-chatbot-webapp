@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios/index'
 import Cookies from 'universal-cookie';
 import {v4 as uuid} from 'uuid';
-
+import { withRouter } from 'react-router-dom';
 import Message from './Message';
 import Card from './Card';
 import QuickReplies from './QuickReplies';
@@ -21,6 +21,7 @@ class Chatbot extends Component {
                  this.state = {
                      messages: [],
                      showBot: true,
+                     shopWelcomeSent: false
                 };
                 if(cookies.get('userID')===undefined){
                     cookies.set('userID',uuid(),{path:'/'});
@@ -71,7 +72,27 @@ class Chatbot extends Component {
                         event.preventDefault();
                         event.stopPropagation();
                 
-                        this.df_text_query(text);
+                        switch (payload) {
+                            case 'recommend_yes':
+                                this.df_event_query('SHOW_RECOMMENDATIONS');
+                                break;
+                            //แนะนำสินค้าจากหมวดหมู่
+                                case 'recommend_food':
+                                this.df_event_query('SHOW_FOOD');
+                                break;
+                            case 'recommend_apparel':
+                                    this.df_event_query('SHOW_APPAREL');
+                                break;
+                            case 'recommend_herb':
+                                    this.df_event_query('SHOW_HERB');
+                                break;
+                            case 'recommend_beverage':
+                                    this.df_event_query('SHOW_BEVERAGE');
+                                break;
+                            default:
+                                this.df_text_query(text);
+                                break;
+                        }
                 
                     }
 
@@ -133,6 +154,18 @@ class Chatbot extends Component {
             async componentDidMount() {
                 await this.resolveAfterXSeconds(1);
                 this.df_event_query('Welcome');
+                
+        if (window.location.pathname === '/shop' && !this.state.shopWelcomeSent) {
+            this.df_event_query('WELCOME_SHOP');
+            this.setState({ shopWelcomeSent: true, showBot: true });
+        }
+
+        this.props.history.listen(() => {
+            if (this.props.history.location.pathname === '/shop' && !this.state.shopWelcomeSent) {
+                this.df_event_query('WELCOME_SHOP');
+                this.setState({ shopWelcomeSent: true, showBot: true });
+            }
+        });
         }
             componentDidUpdate(){
                 this.messagesEnd.scrollIntoView({behaviour: "smooth"});
@@ -210,4 +243,5 @@ class Chatbot extends Component {
     }
 }
 
-export default Chatbot; 
+
+export default withRouter(Chatbot); 
