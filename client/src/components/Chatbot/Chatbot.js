@@ -199,7 +199,7 @@ class Chatbot extends Component {
     render() {
         if (this.state.showBot) {
             return (
-                <div style={{ minHeight: 500, maxHeight: 500, width:400, position: 'absolute', bottom: 0, right: 0, border: '1px solid lightgray'}}>
+                <div style={{ minHeight: 500, maxHeight: 500, width:400, position: 'fixed', bottom: 0, right: 0, border: '1px solid lightgray',background:'white'}}>
                     <nav>
                         <div className="nav-wrapper">
                             <a href="/" onClick={this.hide}  className="brand-logo">ChatBot</a>
@@ -223,7 +223,7 @@ class Chatbot extends Component {
             );
         } else {
             return (
-                <div style={{ minHeight: 40, maxHeight: 500, width:400, position: 'absolute', bottom: 0, right: 0, border: '1px solid lightgray'}}>
+                <div style={{ minHeight: 40, maxHeight: 500, width:400, position: 'fixed', bottom: 0, right: 0, border: '1px solid lightgray',radius:5}}>
                     <nav>
                         <div className="nav-wrapper">
                             <a href="/"  onClick={this.show} className="brand-logo">ChatBot</a>

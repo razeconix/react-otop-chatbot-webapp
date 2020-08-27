@@ -11,6 +11,8 @@ import Profile from './pages/Profile';
 import Chatbot from './Chatbot/Chatbot';
 import CreateProduct from './pages/Admin-CRUD/Product-create';
 import EditProduct from './pages/Admin-CRUD/Product-edit';
+import ItemDetail from './shop/itemDetail';
+
 
 
 
@@ -29,6 +31,7 @@ const App =() => (
                         <Route exact path="/profile" component={Profile}/>
                         <Route exact path="/profile/create" component={CreateProduct}/>
                         <Route exact path="/profile/edit/:id" component={EditProduct}/>
+                        <Route exact path="/product/detail/:id" component={ItemDetail}/>
                         
                     
 

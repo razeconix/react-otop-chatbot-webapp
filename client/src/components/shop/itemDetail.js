@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
-class itemList extends Component {
+class itemDetail extends Component {
     constructor(props) {
       super(props);
       
@@ -13,13 +13,20 @@ class itemList extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://enigmatic-chamber-67174.herokuapp.com/products/') //http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com
+        axios.get('https://enigmatic-chamber-67174.herokuapp.com/products/'+this.props.match.params.id) //http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com
           .then(response => {
-            this.setState({ products: response.data })
+            this.setState({
+              product_name: response.data.product_name,
+              description: response.data.description,
+              price: response.data.price,
+              category: response.data.category,
+              img:  response.data.img
+            })   
           })
-          .catch((error) => {
+          .catch(function (error) {
             console.log(error);
           })
+          
       }
 
 /* ไว้ทดลองเปลี่ยนแบบ
@@ -40,27 +47,24 @@ class itemList extends Component {
 
     render() {
         return (
-            
-             this.state.products.map(item => {
-                return  <div class="col s12 m4 l4 ">
-                <div class="card" style={{ width: 250}} key={item._id}>
+        
+                <div class="col s12 m4 l4 ">
+                <div class="card" style={{ width: 250}} key={this.state._id}>
                 <div class="card-image">
-                  <img src={item.img} style={{width: 250,height:250}}/>
+                  <img src={this.state.img} style={{width: 250,height:250}}/>
                 </div>
                 <div class="card-content">
-                <span class="card-title">{item.product_name}</span>
-                <p>หมวดหมู่: {item.category}</p>
-                <p>ราคา {item.price} บาท</p>
-                </div>
-                <div class="card-action">
-                <Link to={"/product/detail/"+item._id}>ดูสินค้า</Link>
+                <span class="card-title">{this.state.product_name}</span>
+                <p>หมวดหมู่: {this.state.category}</p>
+                <p>ราคา {this.state.price} บาท</p>
                 </div>
               </div>
              </div>
         
-             }))
+             )
+
 
     }
     
   }
-  export default itemList
+  export default itemDetail

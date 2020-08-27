@@ -52,7 +52,7 @@ class ProductList extends Component {
 //<a href="/profile/create" class="waves-effect waves-light btn">เพิ่มสินค้า</a> 
   render() {
     return (
-      <div>
+      <div class>
         <h3>รายการสินค้า</h3>
         <Link to={"/profile/create"} class="waves-effect waves-light btn">เพิ่มสินค้า</Link>
         <table className="table">
