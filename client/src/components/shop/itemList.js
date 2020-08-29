@@ -40,21 +40,29 @@ class itemList extends Component {
 
     render() {
         return (
+          
             
              this.state.products.map(item => {
+               
+
                 return  <div class="col s12 m4 l4 ">
-                <div class="card" style={{ width: 250}} key={item._id}>
+                <div class="card hoverable" style={{ width: 250}} key={item._id}>
+                  {/*-----------------------*/}
+                
                 <div class="card-image">
                   <img src={item.img} style={{width: 250,height:250}}/>
                 </div>
+                  {/*-----------------------*/}
                 <div class="card-content">
                 <span class="card-title">{item.product_name}</span>
-                <p>หมวดหมู่: {item.category}</p>
+                <p>หมวดหมู่ {item.category}</p>
                 <p>ราคา {item.price} บาท</p>
                 </div>
+                  {/*-----------------------*/}
                 <div class="card-action">
                 <Link to={"/product/detail/"+item._id}>ดูสินค้า</Link>
                 </div>
+
               </div>
              </div>
         

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
-class itemDetail extends Component {
+class itemImage extends Component {
     constructor(props) {
       super(props);
       
@@ -47,40 +47,14 @@ class itemDetail extends Component {
 
     render() {
         return (
-          <div class="row">
- 
-          <div class="container">
-          
         
-                  {/*-----------------------*/}
-                  <img class="responsive-img" src={this.state.img} style={{height:500,paddingTop:30, width:500}}/>
-                  <div class="card-content" style={{minHeight: 500, maxHeight: 500, width:400, position: 'fixed', bottom: 50, right: 200,background:'white'}}>
-                  <blockquote>
-                    <h3 class="card-title">{this.state.product_name}</h3>
-                    </blockquote>
-                    <p>{this.state.description}</p>
-                    <hr/>
-                 <p>หมวดหมู่ {this.state.category}</p>
-                 <hr/>
-                <p>ราคา {this.state.price} บาท</p>
-                </div>
-                  {/*-----------------------*/}
-                
-                  {/*-----------------------*/}
-                </div>
-       </div>
-             
-   
-
-             
-             
-       
-        
-        
+               <div>
+                <img class="responsive-img" src={this.state.img}/>
+             </div>
              )
 
 
     }
     
   }
-  export default itemDetail
+  export default itemImage
