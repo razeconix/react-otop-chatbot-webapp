@@ -52,25 +52,25 @@ class ProductList extends Component {
 //<a href="/profile/create" class="waves-effect waves-light btn">เพิ่มสินค้า</a> 
   render() {
     return (
-      <div class>
-        <h3>รายการสินค้า</h3>
-        <Link to={"/profile/create"} class="waves-effect waves-light btn">เพิ่มสินค้า</Link>
-        <table className="table">
-          <thead className="thead-light">
-            <tr>
-              <th>product_name</th>
-              <th>description</th>
-              <th>price</th>
-              <th>category</th>
-              <th>img</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            { this.productList() }
-          </tbody>
-        </table>
-      </div>
+      <div>
+      <h3>รายการสินค้า</h3>
+      <Link to={"/profile/create"} class="waves-effect waves-light btn">เพิ่มสินค้า</Link>
+      <table>
+        <thead className="thead-light">
+          <tr>
+            <th>product_name</th>
+            <th>description</th>
+            <th>price</th>
+            <th>category</th>
+            <th>img</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          { this.productList() }
+        </tbody>
+      </table>
+    </div>
     )
   }
 }

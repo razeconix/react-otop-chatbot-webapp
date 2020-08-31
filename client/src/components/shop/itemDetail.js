@@ -47,35 +47,29 @@ class itemDetail extends Component {
 
     render() {
         return (
-          <div class="row">
- 
+          <div class="row" style={{paddingTop:30}}>
           <div class="container">
+          <div class="col s12 m8 l6">
+                <img class="responsive-img" src={this.state.img}/>
+              </div>
           
-        
-                  {/*-----------------------*/}
-                  <img class="responsive-img" src={this.state.img} style={{height:500,paddingTop:30, width:500}}/>
-                  <div class="card-content" style={{minHeight: 500, maxHeight: 500, width:400, position: 'fixed', bottom: 50, right: 200,background:'white'}}>
-                  <blockquote>
-                    <h3 class="card-title">{this.state.product_name}</h3>
-                    </blockquote>
-                    <p>{this.state.description}</p>
-                    <hr/>
-                 <p>หมวดหมู่ {this.state.category}</p>
-                 <hr/>
-                <p>ราคา {this.state.price} บาท</p>
-                </div>
-                  {/*-----------------------*/}
-                
-                  {/*-----------------------*/}
-                </div>
-       </div>
-             
-   
 
-             
-             
-       
-        
+             <div class="col s12 m4 l4 ">
+               
+                <div class="card-content">
+                <blockquote>
+                    <h3 class="card-title">{this.state.product_name}</h3>
+                    </blockquote><br/>
+                    <p><b>รายละเอียดสินค้า</b><br/>{this.state.description}</p>
+                <p><b>หมวดหมู่ </b> {this.state.category}</p>
+                <p><b>ราคา</b> {this.state.price} บาท</p>
+                </div>
+                  {/*-----------------------*/}
+              </div>
+             </div>
+             </div>
+  
+
         
              )
 

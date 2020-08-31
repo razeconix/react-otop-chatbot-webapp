@@ -26,8 +26,10 @@ class Profile extends Component {
 
   render() {
     return ( 
-      <div className="container">   
-       <ProductList/>
+      <div className="container">
+           
+              <ProductList/>
+        
       </div> 
     )
   
