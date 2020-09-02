@@ -55,19 +55,5 @@ router.route('/').get((req, res) => {
       .catch(err => res.status(400).json('Error: ' + err));
   });
 
-  router.route('/search/:id').post((req, res) => {
-    Product.findById(req.params.id)
-      .then(products => {
-        products.product_name = req.body.product_name;
-        products.description = req.body.description;
-        products.price = req.body.price;
-        products.category = req.body.category;
-        products.img = req.body.img;
-        products.save()
-          .then(() => res.json('Product found!'))
-          .catch(err => res.status(400).json('Error: ' + err));
-      })
-      .catch(err => res.status(400).json('Error: ' + err));
-  });
 
   module.exports = router;

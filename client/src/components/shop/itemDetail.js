@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+
 
 
 class itemDetail extends Component {
@@ -50,7 +50,7 @@ class itemDetail extends Component {
           <div class="row" style={{paddingTop:30}}>
           <div class="container">
           <div class="col s12 m8 l6">
-                <img class="responsive-img" src={this.state.img}/>
+                <img class="responsive-img" alt={this.state.img} src={this.state.img}/>
               </div>
           
 

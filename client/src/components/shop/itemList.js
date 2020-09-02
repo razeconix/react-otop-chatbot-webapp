@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -9,6 +9,8 @@ class itemList extends Component {
       
       this.state = {
           products: []
+
+   
         };
     }
 
@@ -22,6 +24,7 @@ class itemList extends Component {
           })
       }
 
+      
 /* ไว้ทดลองเปลี่ยนแบบ
  return  <div class="col s12 m4 l4 ">
                 <div class="card" style={{ width: 240}}>
@@ -37,20 +40,24 @@ class itemList extends Component {
                 </div>
               </div>
              </div>*/
-
+        
+  
     render() {
-        return (
-          
-            
-             this.state.products.map(item => {
-               
-
+      
+        return (     
+          <div class="row" style={{paddingTop:30}}>
+          <div class="container">
+                  <div>
+                  Search here
+                  </div>
+             {this.state.products.map(item => {
                 return  <div class="col s12 m4 l4 ">
+              
                 <div class="card hoverable" style={{ width: 250}} key={item._id}>
                   {/*-----------------------*/}
                 
                 <div class="card-image">
-                  <img src={item.img} style={{width: 250,height:250}}/>
+                  <img src={item.img} alt={item.img} style={{width: 250,height:250}}/>
                 </div>
                   {/*-----------------------*/}
                 <div class="card-content">
@@ -65,10 +72,14 @@ class itemList extends Component {
 
               </div>
              </div>
-        
-             }))
-
-    }
+             })}
+             </div>
+             </div>
+             
+            
+            )
+            }
+    
     
   }
   export default itemList
