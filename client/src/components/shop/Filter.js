@@ -4,7 +4,7 @@ class Filter extends Component {
     render() {
         return (
             <div>
-                
+                Search here....
             </div>
         );
     }

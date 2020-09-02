@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import Filter from './Filter';
 
 class itemList extends Component {
     constructor(props) {
@@ -48,7 +48,7 @@ class itemList extends Component {
           <div class="row" style={{paddingTop:30}}>
           <div class="container">
                   <div>
-                  Search here
+                  <Filter/>
                   </div>
              {this.state.products.map(item => {
                 return  <div class="col s12 m4 l4 ">
