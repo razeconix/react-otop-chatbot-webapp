@@ -4,14 +4,8 @@ import ItemList from './itemList';
 
 
 
-const Shop =() => (
-
-  
- 
-                         
+const Shop =() => (                   
     <ItemList/>
-
-
 )
 
 
