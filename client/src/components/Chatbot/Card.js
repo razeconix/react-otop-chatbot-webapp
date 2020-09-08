@@ -3,10 +3,10 @@ import React from 'react';
 
 const Card = (props) => {
     return (
-        <div  style={{ height: 270, paddingRight:30, float: 'left'}}>
+        <div  style={{ paddingRight:30, float: 'left'}}>
             <div className="card">
                 <div className="card-image" style={{ width: 240}}>
-                    <img alt={props.payload.fields.header.stringValue} style={{height:240}} src={props.payload.fields.image.stringValue} />
+                    <img alt={props.payload.fields.header.stringValue} style={{height:180}} src={props.payload.fields.image.stringValue} />
                 </div>
                 <div className="card-content">
                 <p className="card-title">{props.payload.fields.header.stringValue}</p>

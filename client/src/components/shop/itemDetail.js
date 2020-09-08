@@ -48,7 +48,7 @@ class itemDetail extends Component {
     render() {
         return (
           <div class="row" style={{paddingTop:30}}>
-          <div class="container">
+          <div class="container" >
           <div class="col s12 m8 l6">
                 <img class="responsive-img" alt={this.state.img} src={this.state.img}/>
               </div>

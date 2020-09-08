@@ -9,31 +9,71 @@ class itemList extends Component {
       
       this.state = {
           products: [],
-          search:""
+          search:"",
+          checkedItems: new Map(),
 
    
         };
+        
     }
 
     componentDidMount() {
         axios.get('https://enigmatic-chamber-67174.herokuapp.com/products/') //http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com
           .then(response => {
-            this.setState({ products: response.data })
+            this.setState({ products: response.data  })
           })
           .catch((error) => {
             console.log(error);
           })
       }
 
+      
+renderCheckboxList(){
+  const  checkboxList = [
+    {
+        "id" :1,
+        "category": "อาหาร"
+    },
+    {   
+        "id" :2,
+        "category": "สมุนไพร"
+    },
+    {
+        "id" :3,
+        "category": "เครื่องดื่ม"
+    },
+    {
+      
+        "id" :4,
+        "category": "เครื่องแต่งกาย"
+    }
+  ];
+  return checkboxList.map(listItem => (
+      <label key={listItem}>
+        <input name={listItem.category} type="checkbox" class="filled-in" checked={this.state.checkedItems.get(listItem.category)} onChange={this.onChangeCheckbox}/>
+        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span>{listItem.category}</span>
+      </label>
+    ))
+  
+}
+      
+
         //เปลี่ยนค่าเวลา Search 
       onChangeSearch= e =>{
               this.setState({search: e.target.value});
       }
 
+      //เปลี่ยนค่า Checkbox
+      onChangeCheckbox=e =>{
+    
+      }
+     
         renderProduct = item =>{
             const {search} = this.state;
+           
+           // const {checkbox}= this.state;
               //search
-            if(search !== "" && item.product_name.indexOf(search) ===-1){
+            if(search !== "" && item.product_name.indexOf(search) ===-1 ){
               return  null
             }//end serch 
 
@@ -63,10 +103,14 @@ class itemList extends Component {
     render() {
       
         return (     
-          <div class="row" style={{paddingTop:30}}>
-          <div class="container">
+          <div class="row" style={{paddingTop:30}}>  
+<div class="container"> 
+{/* <p>หมวดหมู่สินค้า</p>{this.renderCheckboxList()}  */}
+</div>
+          <div class="container" >
             {/* search*/}
                   <div>
+                  
                   <div class="input-field">
                <i class="material-icons">search
                <input id="search" 
