@@ -17,10 +17,12 @@
   "author": "kiratiphan p",
   "license": "ISC",
   "dependencies": {
+    "actions-on-google": "^2.13.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dialogflow": "^1.2.0",
+    "dialogflow-fulfillment": "^0.6.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
@@ -31,5 +33,4 @@
     "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
   }
-  
 }

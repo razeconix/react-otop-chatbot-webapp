@@ -32,6 +32,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(bodyParser.json());
 require('./routes/dialogFlowRoutes')(app);
+require('./routes/fulfillmentRoutes')(app);
 
 var Users = require('./routes/Users')
 app.use('/users', Users)
