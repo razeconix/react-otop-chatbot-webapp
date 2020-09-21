@@ -77,7 +77,7 @@ export default class CreateProduct extends Component {
 
   render() {
     return (
-    <div>
+    <div className="container">
       <h3>เพิ่มสินค้า</h3>
       <form onSubmit={this.onSubmit}>
       <div className="form-group"> 
@@ -90,7 +90,7 @@ export default class CreateProduct extends Component {
               />
         </div>
         <div className="form-group"> 
-          <label>Description: </label>
+          <label>รายละเอียด: </label>
           <input  type="text"
               required
               className="form-control"
@@ -99,7 +99,7 @@ export default class CreateProduct extends Component {
               />
         </div>
         <div className="form-group">
-          <label>ราคา</label>
+          <label>ราคา:</label>
           <input 
               type="text" 
               className="form-control"
@@ -108,13 +108,14 @@ export default class CreateProduct extends Component {
               />
         </div>
         <div className="form-group">
-          <label>ประเภท: </label>
-          <input 
-              type="text" 
-              className="form-control"
-              value={this.state.category}
-              onChange={this.onChangeCategory}
-              />
+          <label>หมวดหมู่: </label>
+          <select className="browser-default" value={this.state.category} onChange={this.onChangeCategory}>
+          <option value="" disabled selected>เลือกหมวดหมู่</option>
+      <option value="1">อาหาร</option>
+      <option value="2">หมุนไพร</option>
+      <option value="3">เครื่องดื่ม</option>
+      <option value="3">เครื่องแต่งกาย</option>
+      </select>
         </div>
         <div className="form-group">
           <label>รูป: </label>
