@@ -5,7 +5,7 @@ const Header =() =>(
         <nav>
             <div className="nav-wrapper" >
                 <Link to ={'/shop'} className="brand-logo">สินค้า OTOP</Link>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li><Link to={'/shop'}>สินค้า</Link></li>
                     <li><Link to={'/about'}>เกี่ยวกับเรา</Link></li>
                     <li><Link to={'/login'}>เข้าสู่ระบบ(admin)</Link></li>

@@ -89,8 +89,8 @@ export default class EditProduct extends Component {
   }
   render() {
     return (
-    <div>
-      <h3>แก้ไขสินค้า</h3>
+    <div className="container">
+      <h3>แก้ไขข้อมูลสินค้า</h3>
       <form onSubmit={this.onSubmit}>
       <div className="form-group"> 
           <label>ชื่อสินค้า: </label>
@@ -120,13 +120,14 @@ export default class EditProduct extends Component {
               />
         </div>
         <div className="form-group">
-          <label>ประเภท: </label>
-          <input 
-              type="text" 
-              className="form-control"
-              value={this.state.category}
-              onChange={this.onChangeCategory}
-              />
+          <label>หมวดหมู่: </label>
+          <select className="browser-default" value={this.state.category} onChange={this.onChangeCategory}>
+          <option value="" disabled selected>เลือกหมวดหมู่</option>
+      <option value="อาหาร">อาหาร</option>
+      <option value="หมุนไพร">หมุนไพร</option>
+      <option value="เครื่องดื่ม">เครื่องดื่ม</option>
+      <option value="เครื่องแต่งกาย">เครื่องแต่งกาย</option>
+      </select>
         </div>
         <div className="form-group">
           <label>รูป: </label>
@@ -139,7 +140,7 @@ export default class EditProduct extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Edit product" className="btn btn-primary" />
+          <input type="submit" value="แก้ไข" className="btn btn-primary" />
         </div>
       </form>
     </div>

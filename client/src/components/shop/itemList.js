@@ -58,11 +58,11 @@ class itemList extends Component {
 renderSelectList(){
   
  const uniqueCategory = this.getUnique(this.state.products, "category");
-  return   <div class="input-field col s12">
+  return   <div className="input-field col s12">
    <select className="browser-default" value={this.state.category} onChange={this.onChangeCategory}>
-   <option value=""  selected>สินค้าทั้งหมด</option>
+   <option value=""  defaultValue>สินค้าทั้งหมด</option>
               {uniqueCategory.map(selectList => (
-                <option key={selectList.id} value={selectList.category}>
+                <option key={selectList._id} value={selectList.category}>
                   {selectList.category}
                 </option>
               ))}
@@ -99,22 +99,22 @@ renderSelectList(){
               return  null
             }//end serch 
 
-          return  <div class="col s12 m4 l4 " key={item._id}>
+          return  <div className="col s12 m4 l4 " key={item._id}>
               
-          <div class="card hoverable" style={{ width: 250}} >
+          <div className="card hoverable" style={{ width: 250}} >
             {/*-----------------------*/}
           
-          <div class="card-image">
+          <div className="card-image">
             <img src={item.img} alt={item.img} style={{width: 250,height:250}}/>
           </div>
             {/*-----------------------*/}
-          <div class="card-content">
-          <span class="card-title">{item.product_name}</span>
+          <div className="card-content">
+          <span className="card-title">{item.product_name}</span>
           <p>หมวดหมู่ {item.category}</p>
           <p>ราคา {item.price} บาท</p>
           </div>
             {/*-----------------------*/}
-          <div class="card-action">
+          <div className="card-action">
           <Link to={"/product/detail/"+item._id}>ดูสินค้า</Link>
           </div>
 
@@ -126,20 +126,20 @@ renderSelectList(){
      
       
         return (     
-          <div class="row" style={{paddingTop:30}}>  
-<div class="container"> 
+          <div className="row" style={{paddingTop:30}}>  
+<div className="container"> 
 {this.renderSelectList()}
 <br/>
 </div>
-          <div class="container" >
+          <div className="container" >
             {/* search*/}
-            <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">search</i>
-          <textarea id="textarea1" class="materialize-textarea"  onChange={this.onChangeSearch}></textarea>
-          <label for="textarea1">ค้นหาสินค้า...</label>
+            <div className="row">
+    <form className="col s12">
+      <div className="row">
+        <div className="input-field col s12">
+        <i className="material-icons prefix">search</i>
+          <textarea id="textarea1" className="materialize-textarea"  onChange={this.onChangeSearch}></textarea>
+          <label htmlFor="textarea1">ค้นหาสินค้า...</label>
         </div>
       </div>
     </form>
