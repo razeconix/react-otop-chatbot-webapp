@@ -124,7 +124,7 @@ export default class EditProduct extends Component {
           <select className="browser-default" value={this.state.category} onChange={this.onChangeCategory}>
           <option value="" disabled selected>เลือกหมวดหมู่</option>
       <option value="อาหาร">อาหาร</option>
-      <option value="หมุนไพร">หมุนไพร</option>
+      <option value="หมุนไพร">สมุนไพร</option>
       <option value="เครื่องดื่ม">เครื่องดื่ม</option>
       <option value="เครื่องแต่งกาย">เครื่องแต่งกาย</option>
       </select>

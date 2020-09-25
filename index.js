@@ -3,6 +3,8 @@ var cors = require('cors')
 const bodyParser = require('body-parser');
 const app = express();
 
+
+
 //Connect Database mongoDB
 const config = require('./config/keys');
 const mongoose = require('mongoose');
@@ -39,6 +41,8 @@ app.use('/users', Users)
 
 var Products = require('./routes/Products')
 app.use('/products', Products)
+
+
 
 
 
