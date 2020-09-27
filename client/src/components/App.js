@@ -13,7 +13,7 @@ import Chatbot from './Chatbot/Chatbot';
 import CreateProduct from './pages/Admin-CRUD/Product-create';
 import EditProduct from './pages/Admin-CRUD/Product-edit';
 import ItemDetail from './shop/itemDetail';
-
+import "./App.css";
 
 
 
@@ -26,6 +26,8 @@ const App =() => (
                     <div>
                         
                         <Header/>
+                       <div className="page-container">
+                           <div className="content-warp">
                         <Route exact path="/" component={Landing} />
                         <Route exact path="/about" component={About} />
                         <Route exact path="/shop" component={Shop} />
@@ -35,8 +37,12 @@ const App =() => (
                         <Route exact path="/profile/create" component={CreateProduct}/>
                         <Route exact path="/profile/edit/:id" component={EditProduct}/>
                         <Route exact path="/product/detail/:id" component={ItemDetail}/>
+                        </div>
+                        </div>
                         <Chatbot/>
+                        
                         <Footer/>
+                       
                         
                         
                     </div>

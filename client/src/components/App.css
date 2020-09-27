@@ -1,0 +1,15 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  .page-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  .content-warp {
+    flex: 1 0 auto;
+  }
+

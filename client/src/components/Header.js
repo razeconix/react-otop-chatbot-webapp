@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const Header =() =>(
+    
         <nav>
             <div className="nav-wrapper" >
                 <Link to ={'/shop'} className="brand-logo">สินค้า OTOP</Link>
@@ -13,6 +14,7 @@ const Header =() =>(
                 </ul>
             </div>
         </nav>
+    
 )
 
 export default Header;
