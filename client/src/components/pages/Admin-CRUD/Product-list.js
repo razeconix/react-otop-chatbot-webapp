@@ -37,8 +37,7 @@ class ProductList extends Component {
   deleteProduct(id) {
     axios.delete('https://enigmatic-chamber-67174.herokuapp.com/products/'+id)  
       .then(response => { console.log(response.data)});
-      
-
+    
     this.setState({
         products: this.state.products.filter(el => el._id !== id)
     })
@@ -56,8 +55,8 @@ class ProductList extends Component {
     return (
       <div>
       <h3>รายการสินค้า</h3>
-      <Link to={"/profile/create"} className="waves-effect waves-light btn">เพิ่มสินค้า</Link>
-      <table className="highlight">
+      <Link to={"/profile/create"} class="waves-effect waves-light btn">เพิ่มสินค้า</Link>
+      <table class="highlight">
         <thead>
           <tr>  
             <th>รูป</th>

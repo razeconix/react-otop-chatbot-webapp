@@ -110,7 +110,7 @@ export default class CreateProduct extends Component {
         <div className="form-group">
           <label>หมวดหมู่: </label>
           <select className="browser-default" value={this.state.category} onChange={this.onChangeCategory}>
-          <option value="" disabled defaultValue>เลือกหมวดหมู่</option>
+          <option value="" disabled selected>เลือกหมวดหมู่</option>
       <option value="อาหาร">อาหาร</option>
       <option value="หมุนไพร">สมุนไพร</option>
       <option value="เครื่องดื่ม">เครื่องดื่ม</option>
