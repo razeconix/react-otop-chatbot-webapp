@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import axios from 'axios';
+
 
 export default class CreateProduct extends Component {
   constructor(props) {
+    
     super(props);
 
     this.onChangeProductName = this.onChangeProductName.bind(this);
@@ -11,15 +13,21 @@ export default class CreateProduct extends Component {
     this.onChangeCategory = this.onChangeCategory.bind(this);
     this.onChangeImg = this.onChangeImg.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    
+ 
 
     this.state = {
       product_name: '',
       description: '',
       price: 0,
       category: '',
-      img:''
+      img:'',
+      imageUrl: '',
+      imageAlt: null
     }
+    
   }
+  
 
   
 
@@ -49,8 +57,31 @@ export default class CreateProduct extends Component {
 
   onChangeImg(e) {
     this.setState({
-      img: e.target.value
+      img: e.target.value = this.state.imageUrl
     })
+  }
+
+  handleImageUpload = () => {
+    const { files } = document.querySelector('input[type="file"]')
+const formData = new FormData();
+formData.append('file', files[0]);
+// replace this with your upload preset name
+formData.append('upload_preset', 'zyrlt2x1');
+const options = {
+  method: 'POST',
+  body: formData,
+};
+
+// replace cloudname with your Cloudinary cloud_name
+return fetch('https://api.cloudinary.com/v1_1/otop-chatbot-phitsanulok/image/upload', options)
+  .then(res => res.json())
+  .then(res => {
+    this.setState({
+      imageUrl: res.secure_url,
+      imageAlt: `An image of ${res.original_filename}`
+    })
+  })
+  .catch(err => console.log(err));
   }
 
   onSubmit(e) {
@@ -62,20 +93,26 @@ export default class CreateProduct extends Component {
       description: this.state.description,
       price: this.state.price,
       category: this.state.category,
-      img:this.state.img
+      img:this.state.imageUrl
     }
 
     console.log(product);
 
     axios.post('https://enigmatic-chamber-67174.herokuapp.com/products/add', product) //http://localhost:5000 ต้องเปลี่ยนเวลาอัพ Heroku ใช้ https://enigmatic-chamber-67174.herokuapp.com
-      .then(res => console.log(res.data));
+      .then(res => console.log(res.data))
+      .catch(err => {
+        console.log(err);
+      })
 
+     
+    
       this.props.history.push('/profile');
       //window.location = "https://enigmatic-chamber-67174.herokuapp.com/profile"; // เวลา Deploy <Link to={"/profile"}></Link>  || '/profile'
     
   }
 
   render() {
+    const { imageUrl, imageAlt } = this.state;
     return (
     <div className="container">
       <h3>เพิ่มสินค้า</h3>
@@ -117,16 +154,33 @@ export default class CreateProduct extends Component {
       <option value="เครื่องแต่งกาย">เครื่องแต่งกาย</option>
       </select>
         </div>
-        <div className="form-group">
+        <form>
+       
+        
+       <div className="form-group">
           <label>รูป: </label>
           <input 
               type="text" 
               className="form-control"
-              value={this.state.img}
+              value={this.state.imageUrl}
               onChange={this.onChangeImg}
               />
-        </div>
-        
+    </div>
+
+  
+
+            <div className="form-group">
+              <input type="file"/>
+            </div>
+
+            <button type="button" className="btn" onClick={this.handleImageUpload} value={this.state.imageUrl}>upload</button>
+            
+          </form>
+
+          {imageUrl && (
+            <img src={imageUrl} alt={imageAlt} className="displayed-image"/>
+          )}
+
         <div className="form-group">
           <input type="submit" value="เพิ่มสินค้า" className="btn btn-primary" />
         </div>
