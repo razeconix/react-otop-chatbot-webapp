@@ -22,13 +22,14 @@ export const login = user => {
     .then(response => {
       localStorage.setItem('usertoken', response.data)
       return response.data
+      
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err)
     })
 }
 
-export const getProfile = user => {
+export const getProfile = () => {
   return axios
     .get('users/profile', {
       headers: { Authorization: ` ${this.getToken()}` }

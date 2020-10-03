@@ -29,9 +29,12 @@ class Register extends Component {
       password: this.state.password
     }
 
-    register(newUser).then(res => {
+    register(newUser).then(() => {
+      
       this.props.history.push(`/login`)
-    })
+    
+  
+  })
   }
 
   render() {

@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import { login } from './UserFunctions'
 
@@ -7,7 +8,8 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      errors: {}
+      errors: {},
+      Errormessage:''
     }
 
     this.onChange = this.onChange.bind(this)
@@ -26,13 +28,14 @@ class Login extends Component {
     }
 
     login(user).then(res => {
-      if (res) {
-        this.props.history.push('/profile');
-      }else {
-        this.props.history.push('/login')
+      
+      if(res){
+        this.props.history.push(`/profile`)
       }
     })
-  }
+}
+  
+  
 
   render() {
     return (
@@ -69,6 +72,7 @@ class Login extends Component {
               >
                 เข้าสู่ระบบ
               </button>
+              
             </form>
           </div>
         </div>
