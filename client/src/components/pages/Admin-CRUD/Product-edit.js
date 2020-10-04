@@ -151,7 +151,7 @@ return fetch('https://api.cloudinary.com/v1_1/otop-chatbot-phitsanulok/image/upl
           <select className="browser-default" value={this.state.category} onChange={this.onChangeCategory}>
           <option value="" disabled selected>เลือกหมวดหมู่</option>
       <option value="อาหาร">อาหาร</option>
-      <option value="หมุนไพร">สมุนไพร</option>
+      <option value="สมุนไพร">สมุนไพร</option>
       <option value="เครื่องดื่ม">เครื่องดื่ม</option>
       <option value="เครื่องแต่งกาย">เครื่องแต่งกาย</option>
       </select>
@@ -170,12 +170,19 @@ return fetch('https://api.cloudinary.com/v1_1/otop-chatbot-phitsanulok/image/upl
     </div>
 
   
+    <form action="#">
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file"/>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text"/>
+      </div>
+    </div>
+  </form>
 
-            <div className="form-group">
-              <input type="file"/>
-            </div>
-
-            <button type="button" className="btn" onClick={this.handleImageUpload} value={this.state.imageUrl}>upload</button>
+    <button type="button" className="btn" onClick={this.handleImageUpload} value={this.state.imageUrl}>อัพโหลดและดูรูป</button>
             
           </form>
 
@@ -184,8 +191,8 @@ return fetch('https://api.cloudinary.com/v1_1/otop-chatbot-phitsanulok/image/upl
           )}
         
 
-        <div className="form-group">
-          <input type="submit" value="แก้ไข" className="btn btn-primary" />
+        <div className="form-group" >
+          <input type="submit" value="บันทึกการแก้ไข" className="btn btn-primary" />
         </div>
       </form>
     </div>

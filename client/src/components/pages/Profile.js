@@ -9,7 +9,6 @@ class Profile extends Component {
     this.state = {
      
       email: '',
-      password:'',
       errors: {}
     }
   }
@@ -19,7 +18,7 @@ class Profile extends Component {
     const decoded = jwt_decode(token)
     this.setState({
       email: decoded.email,
-      password: decoded.password
+     
     })
   }
 

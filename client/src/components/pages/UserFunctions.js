@@ -9,7 +9,7 @@ export const register = newUser => {
       password: newUser.password
     })
     .then(response => {
-      console.log('Registered')
+      console.log('Registered',response)
     })
 }
 
@@ -21,6 +21,7 @@ export const login = user => {
     })
     .then(response => {
       localStorage.setItem('usertoken', response.data)
+      console.log(response.data)
       return response.data
       
     })
@@ -29,13 +30,15 @@ export const login = user => {
     })
 }
 
-export const getProfile = () => {
+export const getProfile = user => {
   return axios
     .get('users/profile', {
       headers: { Authorization: ` ${this.getToken()}` }
+      
     })
     .then(response => {
       console.log(response)
+      
       return response.data
     })
     .catch(err => {

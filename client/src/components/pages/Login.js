@@ -8,8 +8,7 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      errors: {},
-      Errormessage:''
+      errors: {}
     }
 
     this.onChange = this.onChange.bind(this)

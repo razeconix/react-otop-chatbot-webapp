@@ -61,6 +61,7 @@ users.post('/login', (req, res) => {
           let token = jwt.sign(payload, process.env.SECRET_KEY, {
             expiresIn: 1440
           })
+          //console.log(token)
           res.send(token)
         } else {
           // Passwords don't match
@@ -81,13 +82,14 @@ users.post('/login', (req, res) => {
 
 users.get('/profile', (req, res) => {
   var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
-
+  
   User.findOne({
     _id: decoded._id
   })
     .then(user => {
       if (user) {
         res.json(user)
+        
       } else {
         res.send('User does not exist')
       }

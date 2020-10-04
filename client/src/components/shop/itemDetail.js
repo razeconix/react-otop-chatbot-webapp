@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import M from 'materialize-css/dist/js/materialize.min.js'
 
 
 
@@ -26,7 +27,8 @@ class itemDetail extends Component {
           .catch(function (error) {
             console.log(error);
           })
-          
+
+          M.AutoInit();
       }
 
 /* ไว้ทดลองเปลี่ยนแบบ
@@ -50,7 +52,8 @@ class itemDetail extends Component {
           <div class="row" style={{paddingTop:30}}>
           <div class="container" >
           <div class="col s12 m8 l6">
-                <img class="responsive-img" alt={this.state.img} src={this.state.img}/>
+          <img class="responsive-img materialboxed" style={{height:500,width:500}}alt={this.state.img} src={this.state.img}/>
+                {/*<img class="responsive-img" alt={this.state.img} src={this.state.img}/>*/}
               </div>
           
 
