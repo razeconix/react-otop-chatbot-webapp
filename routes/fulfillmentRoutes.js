@@ -1,5 +1,5 @@
-const {WebhookClient,Text,Payload} = require('dialogflow-fulfillment');
-
+const {WebhookClient,Text,Payload,Card,Image} = require('dialogflow-fulfillment');
+const {dialogflow} = require('actions-on-google');
 const Product = require('../models/Product');
 
 
@@ -7,17 +7,11 @@ module.exports = app => {
     app.post('/', async (req, res) => {
         const agent = new WebhookClient({ request: req, response: res });
 
-        
-         
-      
-
         async function getProduct(agent) {
-            const payload_data = {
-                "type": "text",     
-                "text": "Hello, world" 
-            };
+           // const payload_data = {
+            //}
 
-            let payload = new Payload(agent.UNSPECIFIED, payload_data, { sendAsMessage: true ,rawPayload: true});
+            //let payload = new Payload(agent.UNSPECIFIED, payload_data, { sendAsMessage: true ,rawPayload: true});
             let product = await Product.findOne({'product_name' : agent.parameters.product_name});
 
             if (product !== null ) {
@@ -25,14 +19,14 @@ module.exports = app => {
                 
                 //responseText = `${agent.parameters.product_name} ราคา ${product.price} บาท `;
                 responses = [
-                    new Text((`${agent.parameters.product_name}`)+" ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌ ᠌"+ 
-                            (`ราคา ${product.price} บาท...`)),
-                    
+                    new Text((`${agent.parameters.product_name}`)+" "+(`ราคา ${product.price} บาท`))
                 ]
                 
                 
+                
+                
             }
-            agent.add(payload);
+            
             agent.add(responses);
             
         
