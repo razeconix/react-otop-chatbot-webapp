@@ -154,6 +154,7 @@ return fetch('https://api.cloudinary.com/v1_1/otop-chatbot-phitsanulok/image/upl
       <option value="สมุนไพร">สมุนไพร</option>
       <option value="เครื่องดื่ม">เครื่องดื่ม</option>
       <option value="เครื่องแต่งกาย">เครื่องแต่งกาย</option>
+      <option value="ของใช้และของตกแต่ง">ของใช้และของตกแต่ง</option>
       </select>
         </div>
         <form>

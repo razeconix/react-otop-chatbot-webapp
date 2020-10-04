@@ -1,5 +1,5 @@
-const {WebhookClient,Text,Payload,Card,Image} = require('dialogflow-fulfillment');
-const {dialogflow} = require('actions-on-google');
+const {WebhookClient,Text} = require('dialogflow-fulfillment');
+
 const Product = require('../models/Product');
 
 
