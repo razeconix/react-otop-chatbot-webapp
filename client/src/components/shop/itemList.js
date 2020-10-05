@@ -99,27 +99,43 @@ renderSelectList(){
               return  null
             }//end serch 
 
-          return  <div className="col s12 m4 l4 " key={item._id}>
+          return    <div class="col s12 m4 l4"  key={item._id}>
+            <div class="card">
+              <div class="card-image">
+              <img src={item.img} alt={item.img} style={{height:350}}/>
+                <span class="card-title" style={{display:'block', background:'black', width:350 ,opacity: 0.6} }>{item.product_name}</span>
+              </div>
+              <div class="card-content">
+              <p>หมวดหมู่ {item.category}</p>
+              <p>ราคา {item.price} บาท</p>
+              </div>
+              <div class="card-action">
+              <Link to={"/product/detail/"+item._id}>ดูข้อมูลสินค้า</Link>
+              </div>
+            </div>
+          </div>
+ 
+          {/*<div className="col s12 m4 l4 " key={item._id}>
               
           <div className="card hoverable" style={{ width: 250}} >
-            {/*-----------------------*/}
+            
           
           <div className="card-image">
             <img src={item.img} alt={item.img} style={{width: 250,height:250}}/>
           </div>
-            {/*-----------------------*/}
+            
           <div className="card-content">
           <span className="card-title">{item.product_name}</span>
           <p>หมวดหมู่ {item.category}</p>
           <p>ราคา {item.price} บาท</p>
           </div>
-            {/*-----------------------*/}
+            
           <div className="card-action">
           <Link to={"/product/detail/"+item._id}>ดูสินค้า</Link>
           </div>
 
         </div>
-       </div>
+       </div>*/}
         }
   
     render() {
