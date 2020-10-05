@@ -4,7 +4,7 @@ import React from 'react';
 const QuickReply = (props) => {
     if (props.reply.structValue.fields.payload) {
         return (
-            <a style={{ margin: 3}} href="/" className="waves-effect waves-light btn"
+            <div style={{ margin: 3}} className="waves-effect waves-light deep-orange darken-4 btn"
                onClick={(event) =>
                    props.click(
                        event,
@@ -13,14 +13,14 @@ const QuickReply = (props) => {
                    )
                }>
                 {props.reply.structValue.fields.text.stringValue}
-            </a>
+            </div>
         );
     } else {
         return (
-            <a style={{ margin: 3}} href={props.reply.structValue.fields.link.stringValue}
-               className="btn-floating btn-large waves-effect waves-light red">
+            <div style={{ margin: 3}} href={props.reply.structValue.fields.link.stringValue}
+               className="btn-floating btn-large waves-effect waves-light red deep-orange darken-4">
                 {props.reply.structValue.fields.text.stringValue}
-            </a>
+            </div>
         );
     }
 

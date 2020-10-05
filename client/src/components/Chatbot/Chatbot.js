@@ -208,8 +208,8 @@ class Chatbot extends Component {
             return (
                 <div style={{ minHeight: 500, maxHeight: 500, width:400, position: 'fixed', bottom: 0, right: 0, border: '1px solid lightgray',background:'white'}}>
                     <nav>
-                        <div className="nav-wrapper">
-                            <a href="/" onClick={this.hide}  className="brand-logo">ChatBot</a>
+                        <div className="nav-wrapper orange darken-4">
+                            <a href="/" onClick={this.hide}  className="brand-logo">แชทบอท</a>
                             <ul id="nav-mobile" className="right hide-on-med-and-down">
                                 <li><a href="/" onClick={this.hide}>ซ่อน</a></li>
                             </ul>
@@ -223,7 +223,7 @@ class Chatbot extends Component {
                         </div>
                     </div>
                     <div className=" col s12" >
-                        <input style={{margin: 0, paddingLeft: '1%', paddingRight: '1%', width: '98%'}} ref={(input) => { this.talkInput = input; }} placeholder="type a message:"  onKeyPress={this._handleInputKeyPress} id="user_says" type="text" />
+                        <input style={{margin: 0, paddingLeft: '1%', paddingRight: '1%', width: '98%'}} ref={(input) => { this.talkInput = input; }} placeholder="พิมพ์ข้อความ:"  onKeyPress={this._handleInputKeyPress} id="user_says" type="text" />
                     </div>
 
                 </div>
@@ -232,8 +232,8 @@ class Chatbot extends Component {
             return (
                 <div style={{ minHeight: 40, maxHeight: 500, width:400, position: 'fixed', bottom: 0, right: 0, border: '1px solid lightgray',radius:5}}>
                     <nav>
-                        <div className="nav-wrapper">
-                            <a href="/"  onClick={this.show} className="brand-logo">ChatBot</a>
+                        <div className="nav-wrapper orange darken-4 ">
+                            <a href="/"  onClick={this.show} className="brand-logo">แชทบอท</a>
                             <ul id="nav-mobile" className="right hide-on-med-and-down">
                                 <li><a href="/" onClick={this.show}>แสดง</a></li>
                             </ul>
