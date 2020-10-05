@@ -86,7 +86,7 @@ return fetch('https://api.cloudinary.com/v1_1/otop-chatbot-phitsanulok/image/upl
   .then(res => res.json())
   .then(res => {
     this.setState({
-      imageUrl: res.secure_url,
+      img: res.secure_url,
       imageAlt: `An image of ${res.original_filename}`
     })
   })
@@ -102,7 +102,7 @@ return fetch('https://api.cloudinary.com/v1_1/otop-chatbot-phitsanulok/image/upl
         description: this.state.description,
         price: this.state.price,
         category: this.state.category,
-        img:this.state.imageUrl
+        img:this.state.img
       }
   
       console.log(product);
@@ -114,12 +114,30 @@ return fetch('https://api.cloudinary.com/v1_1/otop-chatbot-phitsanulok/image/upl
     
   }
   render() {
-    const { imageUrl, imageAlt } = this.state;
+    const { img, imageAlt } = this.state;
     return (
     <div className="container">
       <h3>แก้ไขข้อมูลสินค้า</h3>
       <form onSubmit={this.onSubmit}>
+      {img && (
+            <img src={img} alt={imageAlt} style={{width:'auto',height:150}}className="displayed-image"/>
+          )}
+        <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file"/>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text"/>
+      </div>
+    </div>
+
+
+    <button type="button" className="btn" onClick={this.handleImageUpload} value={this.state.img}>อัพโหลดและดูรูป</button>
+
       <div className="form-group"> 
+      <br/>
+      <br/>
           <label>ชื่อสินค้า: </label>
           <input  type="text"
               required
@@ -157,45 +175,27 @@ return fetch('https://api.cloudinary.com/v1_1/otop-chatbot-phitsanulok/image/upl
       <option value="ของใช้และของตกแต่ง">ของใช้และของตกแต่ง</option>
       </select>
         </div>
-        <form>
-       
+      
+       <br/>
         
        <div className="form-group">
-          <label>รูป: </label>
           <input 
-              type="text" 
+              type="hidden" 
               className="form-control"
               value={this.state.img}
               onChange={this.onChangeImg}
               />
     </div>
 
-  
-    <form action="#">
-    <div class="file-field input-field">
-      <div class="btn">
-        <span>File</span>
-        <input type="file"/>
-      </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate" type="text"/>
-      </div>
-    </div>
-  </form>
-
-    <button type="button" className="btn" onClick={this.handleImageUpload} value={this.state.imageUrl}>อัพโหลดและดูรูป</button>
-            
-          </form>
-
-          {imageUrl && (
-            <img src={imageUrl} alt={imageAlt} className="displayed-image"/>
-          )}
-        
-
+    <br/>
         <div className="form-group" >
           <input type="submit" value="บันทึกการแก้ไข" className="btn btn-primary" />
         </div>
       </form>
+      <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     )
   }
