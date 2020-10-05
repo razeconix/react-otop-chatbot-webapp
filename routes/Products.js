@@ -1,6 +1,8 @@
 const router = require('express').Router();
 let Product = require('../models/Product');
 
+
+
 router.route('/').get((req, res) => {
     Product.find()
       .then(products => res.json(products))
