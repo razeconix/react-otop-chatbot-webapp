@@ -80,8 +80,8 @@ class Chatbot extends Component {
                                 case 'recommend_food':
                                 this.df_event_query('SHOW_FOOD');
                                 break;
-                            case 'recommend_apparel':
-                                    this.df_event_query('SHOW_APPAREL');
+                            case 'recommend_decoration':
+                                    this.df_event_query('SHOW_DECORATION');
                                 break;
                             case 'recommend_herb':
                                     this.df_event_query('SHOW_HERB');

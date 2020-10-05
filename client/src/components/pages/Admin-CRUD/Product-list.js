@@ -64,7 +64,7 @@ class ProductList extends Component {
             <th>รายละเอียด</th>
             <th>ราคา</th>
             <th>หมวดหมู่</th>
-            <th>การกระทำ</th>
+            <th>การจัดการ</th>
           </tr>
         </thead>
         <tbody>
