@@ -16,51 +16,76 @@ class Landing extends Component {
                 <br/><br/>
                 <h1 class="header center white-text ">สินค้า OTOP จังหวัดพิษณุโลก</h1>
                 <div class="row center">
-                  <h5 class="header col s12 light white-text">A modern responsive front-end framework based on Material Design</h5>
+                  <h5 class="header col s12 light white-text">เว็บไซต์ที่รวบรวมข้อมูลเกี่ยวกับสินค้าหนึ่งตำบลหนึ่งผลิตภัณท์ของจังหวัดพิษณุโลก</h5>
                 </div>
                 <div class="row center">
-                  <a href="https://enigmatic-chamber-67174.herokuapp.com/#/shop" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">เข้าชมสินค้า</a>
+                  <a href="https://enigmatic-chamber-67174.herokuapp.com/#/shop" id="download-button" class="btn-large waves-effect waves-orange white black-text ">เข้าชม</a>
                 </div>
                 <br/><br/>
         
               </div>
             </div>
-            <div class="parallax"><img src="https://blog.traveloka.com/th/wp-content/uploads/sites/5/2019/04/%E0%B9%80%E0%B8%99%E0%B8%B4%E0%B8%99%E0%B8%A1%E0%B8%B0%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%87-1-800x534.jpg" alt="Unsplashed background img 1" style={{transform: (-50, 207.579, 0), opacity: 1}} /></div>
+            <div class="parallax"><img src="https://scontent.fphs1-1.fna.fbcdn.net/v/t31.0-8/20776763_707632509443093_8619402235372247681_o.jpg?_nc_cat=105&_nc_sid=cdbe9c&_nc_ohc=Hr99E5lJn2gAX859htM&_nc_ht=scontent.fphs1-1.fna&oh=d499cda84f74c8e1d0848567e9c0dd56&oe=5FA090B1" alt="Unsplashed background img 1" style={{transform: (-50, 207.579, 0), opacity: 1}} /></div>
           </div>
         
         
           <div class="container">
             <div class="section">
-        
-              
               <div class="row">
                 <div class="col s12 m4">
                   <div class="icon-block">
-                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-                    <h5 class="center">Speeds up development</h5>
+                  <img src="https://www.otopphitsanulok.com/wp-content/uploads/2019/08/FOOD-1-1024x814.png" alt="img" style={{width:300, height:300}}></img>
+                    <h5 class="center">อาหาร</h5>
         
-                    <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                    <p class="light">รวบรวมผลิตภัณฑ์ที่เป็นอาหารทั้งของคาวและของหวาน เช่น กล้วยตาก,ข้าวตัง,ปลาส้ม เป็นต้น</p>
                   </div>
                 </div>
         
                 <div class="col s12 m4">
                   <div class="icon-block">
-                    <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-                    <h5 class="center">User Experience Focused</h5>
+                  <img src="https://www.otopphitsanulok.com/wp-content/uploads/2019/08/FABRIC-APPAREL-1024x1024.png" alt="img" style={{width:300, height:300}}></img>
+                    <h5 class="center">เครื่องแต่งกาย</h5>
         
-                    <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                    <p class="light">ผลิตภัณฑ์จากผ้าทอมือและการย้อมสีจากธรรมชาติ เช่น ผ้าขาวม้า,ผ้ามัดหมี่,ผ้าทอมือหมักยางกล้วย เป็นต้น</p>
                   </div>
                 </div>
         
                 <div class="col s12 m4">
                   <div class="icon-block">
-                    <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-                    <h5 class="center">Easy to work with</h5>
+                  <img src="https://www.otopphitsanulok.com/wp-content/uploads/2019/08/BEVERAGE-1-1024x701.png" alt="img" style={{width:300, height:300}}></img>
+                    <h5 class="center">เครื่องดื่ม</h5>
         
-                    <p class="center light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                    <p class="center light">ผลิตภัณฑ์จากเกษตรกรในจังหวัด เช่น น้ำตาลสด,ไวน์วังพิกุล,ชาดอกกาแฟ เป็นต้น</p>
                   </div>
                 </div>
               </div>
+
+              <div class="container">
+            <div class="section">
+              <div class="row">
+                <div class="col s12 m6">
+                  <div class="icon-block">
+                  <img src="https://www.otopphitsanulok.com/wp-content/uploads/2019/08/APPARTUS-DECORATION-1024x1024.png" alt="img" style={{width:300, height:300}}></img>
+                    <h5 class="center">ของใช้และของตกแต่ง</h5>
+        
+                    <p class="light">ผลิตภัณฑ์ที่เป็นงานฝีมือ เช่น พระพุทธชินราชในซุ้มเรือนแก้ว,ดอกไม้จากดินปั้น,กระเป๋าเสื่อกก,ไม้กวาดดอกหญ้า เป็นต้น</p>
+                  </div>
+                </div>
+
+                <div class="col s12 m6">
+                  <div class="icon-block">
+                  <img src="https://www.otopphitsanulok.com/wp-content/uploads/2019/08/HERB-NON-FOOD-1024x1024.png" alt="img" style={{width:300, height:300}}></img>
+                    <h5 class="center">สมุนไพร</h5>
+        
+                    <p class="light">ผลิตภัณฑ์ที่มีสรรพคุณบำรุงต่างๆ เช่น ลูกประคบสมุนไพร,เยลลี่เซรั่ม,กระชายดำ เป็นต้น</p>
+                  </div>
+                </div>
+
+                </div>
+                </div>
+                </div>
+              
+              
         
             </div>
           </div>
