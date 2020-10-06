@@ -25,7 +25,7 @@ class Landing extends Component {
         
               </div>
             </div>
-            <div class="parallax"><img src="https://scontent.fphs1-1.fna.fbcdn.net/v/t31.0-8/20776763_707632509443093_8619402235372247681_o.jpg?_nc_cat=105&_nc_sid=cdbe9c&_nc_ohc=Hr99E5lJn2gAX859htM&_nc_ht=scontent.fphs1-1.fna&oh=d499cda84f74c8e1d0848567e9c0dd56&oe=5FA090B1" alt="Unsplashed background img 1" style={{transform: (-50, 207.579, 0), opacity: 1}} /></div>
+            <div class="parallax"><img src="https://i.imgur.com/9CLy7rC.jpg" alt="Unsplashed background img 1" style={{transform: (-50, 207.579, 0), opacity: 1}} /></div>
           </div>
         
         
