@@ -67,7 +67,6 @@ class Landing extends Component {
                   <div class="icon-block">
                   <img src="https://www.otopphitsanulok.com/wp-content/uploads/2019/08/APPARTUS-DECORATION-1024x1024.png" alt="img" style={{width:300, height:300}}></img>
                     <h5 class="center">ของใช้และของตกแต่ง</h5>
-        
                     <p class="light">ผลิตภัณฑ์ที่เป็นงานฝีมือ เช่น พระพุทธชินราชในซุ้มเรือนแก้ว,ดอกไม้จากดินปั้น,กระเป๋าเสื่อกก,ไม้กวาดดอกหญ้า เป็นต้น</p>
                   </div>
                 </div>
