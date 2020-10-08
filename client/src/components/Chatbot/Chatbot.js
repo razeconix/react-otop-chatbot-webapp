@@ -76,6 +76,9 @@ class Chatbot extends Component {
                             case 'recommend_yes':
                                 this.df_event_query('SHOW_RECOMMENDATIONS');
                                 break;
+                            case 'recommend_no':
+                                 this.df_event_query('SHOW_FALLBACK');
+                                break;
                             //แนะนำสินค้าจากหมวดหมู่
                                 case 'recommend_food':
                                 this.df_event_query('SHOW_FOOD');
