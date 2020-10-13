@@ -22,6 +22,7 @@ class ProductList extends Component {
     this.deleteProduct = this.deleteProduct.bind(this)
 
     this.state = {products: []};
+    
   }
 
   componentDidMount() {
